@@ -62,6 +62,9 @@ def request_price_for_hour(date:str, hour:str)->pd.DataFrame:
     raise RuntimeError(msg)
 
 def request_latest_prices()->pd.DataFrame:
+    """
+    Get all available prices from the API.
+    """
     request_str = parse_request(hour = "latest")
 
     data = None
@@ -77,5 +80,3 @@ def request_latest_prices()->pd.DataFrame:
         time.sleep(WAIT_S) # to avoid overloading API
     msg = f"Max tries of {TRY_MAX} reached without successful response. Latest status code: {data.status_code}, for GET request: {request_str}"
     raise RuntimeError(msg)
-
-

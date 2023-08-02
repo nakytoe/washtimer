@@ -31,6 +31,16 @@ def calculate_consumption(energy_prices:pd.DataFrame,
                           account_for_current_time = False,
                           kernel_function = uniform_consumption_kernel)->pd.DataFrame:
 
+    """
+    Calculate energy consumption / price via simple kernel convolution.
+
+    Note that the unit for consumption is one,
+    as we do not know the power of the appliance.
+
+    Therefore, the result is actually a kernel/rolling mean of the hourly prices with
+    optionally accounting for the starting time offset (e.g. starting at 15 past and not even)
+    """
+
     kernel = kernel_function(hours, minutes, account_for_current_time)
 
     mean_price = np.convolve(energy_prices.price, kernel, "valid")
@@ -61,6 +71,11 @@ def min_max_hours(energy_prices: pd.DataFrame,
                 kernel_function = uniform_consumption_kernel,
                 drop_past: bool = True)->pd.DataFrame:
     
+    """
+    Evaluate the most cheap and expensive hours to time appliance programs
+    of different power hours to. 
+    """
+
     min_max_df = pd.DataFrame(columns={"mean_price":float,
                        "power_hours":float,
                        "start_time":str,
