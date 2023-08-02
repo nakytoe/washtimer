@@ -21,9 +21,10 @@ jobs:
       - name: Update README with new data
         run: docker run -v $PWD:/app washtimer:latest -c "python main.py"
 
-      - name: Update resources
-        uses: test-room-7/action-update-file@v1
+      - uses: scapeville/action-git-add-all-then-commit-then-push@v1
         with:
-          file-path: README.md
-          commit-msg: Update data & README
-          github-token: ${{ secrets.UPDATE_KEY }}
+          name: foo   # (optional)
+          email: bar  # (optional)
+          msg: baz    # (optional)
+        env:
+          GH_TOKEN: ${{ github.UPDATE_KEY }}
