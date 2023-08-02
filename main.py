@@ -5,7 +5,15 @@ import pytz
 from washtimer import porssisahko as pool
 from washtimer.consumption import calculate_consumption, min_max_hours
 
-## calculate 
+## calculate cheapest and most expensive hours to use appliance
+
+
+BASE_TEXT = """
+# WashTimer
+
+> Which hour to set the timer of your washing machine for cheapest wash? Look no further!
+
+"""
 
 if __name__ == "__main__":
 
@@ -27,34 +35,29 @@ if __name__ == "__main__":
         price_df = pool.request_latest_prices()
 
     # calculate cheapest and most expensive hours
-    min_max_df = min_max_hours(price_df)
+    df = min_max_hours(price_df)
 
     # convert timezones
-    min_max_df.start_time = min_max_df.start_time.apply(convert_to_timezone)
-    min_max_df.end_time = min_max_df.end_time.apply(convert_to_timezone)
+    df.start_time = df.start_time.apply(convert_to_timezone)
+    df.end_time = df.end_time.apply(convert_to_timezone)
 
-    md_base = """
-# WashTimer
+    df.sort_values(by = "power_hours", inplace= True)
+    df = df[["power_hours", "start_time", "end_time", "mean_price", "minmax"]]
 
-> Which hour to set the timer of your washing machine for cheapest wash? Look no further!
-
-"""
+    df = df.rename({"mean_price":"mean price [€c/kWh]",
+                "power_hours":"program duration [h]",
+                "start_time":"start time",
+                "end_time":"end time"}, axis = 1)
     
-    for power_hour, g in min_max_df.groupby("power_hours"):
-        desc1 = f"""For {power_hour}h program:"""
-        for _, row in g.iterrows():
-            kind = "cheapest" if row.minmax == "min" else "expensive"
-            price = np.round(row.mean_price, 2)
-            start = row.start_time
-            end = row.end_time
-            desc2 = f"""
-    it is the most {kind} ({price} €c/kWh on avg) to set the timer:
-        - to begin at {start}, or 
-        - to end at {end}
+    out = BASE_TEXT
 
-"""
-            desc1 += desc2
-        md_base += desc1
+    for minmax, g in df.groupby("minmax"):
+        out += f"The {minmax} prices for today:\n\n"
+        s = g.drop("minmax", axis = 1).to_string(index=False)
+        out += f"{s}\n\n"
 
-    print(md_base)
+    print(out)
+    
+    with open("README.md", "w") as f:
+        f.write(out)
     
