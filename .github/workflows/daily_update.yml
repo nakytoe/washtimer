@@ -1,0 +1,31 @@
+name: Daily update with new data
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build the Docker image
+        run: docker build . -t washtimer:latest
+
+      - name: Load new price data
+        run: docker run -it -v $PWD:/app washtimer:latest python load_prices.py
+
+      - name: Update README with new data
+        run: docker run -it -v $PWD:/app washtimer:latest python main.py
+
+      - name: Update resources
+        uses: test-room-7/action-update-file@v1
+        with:
+          file-path: |
+            data/latest_prices.csv
+            README.md
+          commit-msg: Update data & README
+          github-token: ${{ secrets.UPDATE_KEY }}
