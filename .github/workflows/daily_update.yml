@@ -16,10 +16,10 @@ jobs:
         run: docker build . -t washtimer:latest
 
       - name: Load new price data
-        run: docker run -v $PWD:/app washtimer:latest /bin/bash -c "python load_prices.py"
+        run: docker run -v $PWD:/app washtimer:latest -c "python load_prices.py"
 
       - name: Update README with new data
-        run: docker run -v $PWD:/app washtimer:latest /bin/bash -c "python main.py"
+        run: docker run -v $PWD:/app washtimer:latest -c "python main.py"
 
       - name: Update resources
         uses: test-room-7/action-update-file@v1
