@@ -13,7 +13,11 @@ BASE_TEXT = """
 
 > Which hour to set the timer of your washing machine for cheapest wash? Look no further!
 
+A GitHub Actions workflow updates the prices show daily around 12:15 UTC+0.
+
 """
+
+END_NOTES = "Electricity prices retrieved from [porssisahko.net](https://porssisahko.net/api) open API"
 
 if __name__ == "__main__":
 
@@ -53,11 +57,14 @@ if __name__ == "__main__":
 
     for minmax, g in df.groupby("minmax"):
         out += f"The {minmax} prices for today:\n\n"
-        s = g.drop("minmax", axis = 1).to_string(index=False)
+        out += "\t"
+        s = "\n\t".join(g.drop("minmax", axis = 1).to_string(index=False).split("\n"))
         out += f"{s}\n\n"
 
+    out += END_NOTES
+
     print(out)
-    
+
     with open("README.md", "w") as f:
         f.write(out)
     
