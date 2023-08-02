@@ -49,7 +49,7 @@ if __name__ == "__main__":
     df = df[["power_hours", "start_time", "end_time", "mean_price", "minmax"]]
 
     df = df.rename({"mean_price":"mean price [€c/kWh]",
-                "power_hours":"program duration [h]",
+                "power_hours":"program [h]",
                 "start_time":"start time",
                 "end_time":"end time"}, axis = 1)
     
