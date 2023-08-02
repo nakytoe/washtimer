@@ -13,6 +13,9 @@ BASE_TEXT = """
 
 > Which hour to set the timer of your washing machine for cheapest wash? Look no further!
 
+This page shows the periods for highest and lowest electricity prices (Nord Pool) 
+for running home appliance programs of different lengths throughout the day. 
+
 A GitHub Actions workflow updates the prices show daily around 12:15 UTC+0.
 
 """
