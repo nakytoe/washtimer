@@ -2,7 +2,7 @@ name: Daily update with new data
 
 on:
   schedule:
-    - cron: '45 12 * * *'
+    - cron:  '55 12 * * *'
 
 jobs:
 
