@@ -40,10 +40,11 @@ def calculate_consumption(energy_prices:pd.DataFrame,
     Therefore, the result is actually a kernel/rolling mean of the hourly prices with
     optionally accounting for the starting time offset (e.g. starting at 15 past and not even)
     """
-
+    
     kernel = kernel_function(hours, minutes, account_for_current_time)
-
+    energy_prices = energy_prices.sort_values(by = "startDate", ascending=True)
     mean_price = np.convolve(energy_prices.price, kernel, "valid")
+    
     valid_hours = mean_price.shape[0]
     start_time = energy_prices.startDate.iloc[:valid_hours]
 
@@ -94,14 +95,15 @@ def min_max_hours(energy_prices: pd.DataFrame,
         energy_prices = energy_prices[energy_prices.startDate.apply(is_future)]
     
     for hours in power_hours:
-        program_mean_price = calculate_consumption(energy_prices,
+        mean_price = calculate_consumption(energy_prices,
                             hours, 
                             account_for_current_time=account_for_current_time,
                             kernel_function = kernel_function)
         
-        cheapest = program_mean_price.loc[program_mean_price.mean_price.argmin(),:].copy()
+        cheapest = mean_price.iloc[mean_price.mean_price.argmin()].copy()
         cheapest["minmax"] = "min"
-        expensive = program_mean_price.loc[program_mean_price.mean_price.argmax(),:].copy()
+
+        expensive = mean_price.iloc[mean_price.mean_price.argmax()].copy()
         expensive["minmax"] = "max"
 
         min_max_df.loc[min_max_df.shape[0]] = cheapest
