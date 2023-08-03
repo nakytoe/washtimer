@@ -1,27 +1,29 @@
 import datetime as dt
 import pandas as pd
-import numpy as np
 import pytz
 from washtimer import porssisahko as pool
-from washtimer.consumption import calculate_consumption, min_max_hours
+from washtimer.consumption import min_max_hours
 
 ## calculate cheapest and most expensive hours to use appliance
 
 
-BASE_TEXT = """
+BASE_TEXT = f"""
 # WashTimer
 
 > Which hour to set the timer of your washing machine for cheapest wash? Look no further!
 
-This page shows the periods for highest and lowest electricity prices (Nord Pool) 
+This page shows the periods for highest and lowest electricity prices in Finland 
 for running home appliance programs of different lengths throughout the day. 
 
-A GitHub Actions workflow updates the prices show daily around 12:15 UTC+0.
+A GitHub Actions workflow updates the prices shown daily around 15:15 {pool.TIMEZONE} time.
 
 """
 
-END_NOTES = "Electricity prices retrieved from [porssisahko.net](https://porssisahko.net/api) open API"
+END_NOTES = """
+Source code available at [github.com/nakytoe/washtimer](https://github.com/nakytoe/washtimer).
 
+Electricity prices retrieved from [porssisahko.net](https://porssisahko.net/api) open API.
+"""
 if __name__ == "__main__":
 
     tz = pytz.timezone(pool.TIMEZONE)
@@ -29,7 +31,8 @@ if __name__ == "__main__":
     def convert_to_timezone(time_str: str, tz = tz)->str:
         fmt1 = "%Y-%m-%dT%H:%M:%S.000Z"
         t = dt.datetime.strptime(time_str, fmt1)
-        t_tz = tz.localize(t)
+        t_utc = pytz.utc.localize(t)
+        t_tz = t_utc.astimezone(tz)
         fmt2 = "%Y-%m-%d %H:%M:%S %Z%z"
         return dt.datetime.strftime(t_tz, fmt2)
     
