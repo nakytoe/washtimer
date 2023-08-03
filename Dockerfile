@@ -5,7 +5,7 @@ RUN mkdir /app
 COPY . /app
 WORKDIR /app
 
-RUN python -m pip install numpy pandas requests matplotlib pyarrow
+RUN python -m pip install numpy pandas requests
 
 ENV PYTHONPATH /app
 
