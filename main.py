@@ -15,7 +15,7 @@ BASE_TEXT = f"""
 This page shows the periods for highest and lowest electricity prices in Finland 
 for running home appliance programs of different lengths throughout the day. 
 
-A GitHub Actions workflow updates the prices shown daily around 15:15 {pool.TIMEZONE} time.
+A GitHub Actions workflow updates the prices shown daily around 06:30 and 15:15 {pool.TIMEZONE} time.
 
 """
 
