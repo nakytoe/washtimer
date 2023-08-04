@@ -6,23 +6,23 @@
 This page shows the periods for highest and lowest electricity prices in Finland 
 for running home appliance programs of different lengths throughout the day. 
 
-A GitHub Actions workflow updates the prices shown daily around 15:15 Europe/Helsinki time.
+A GitHub Actions workflow updates the prices shown daily around 06:30 and 15:15 Europe/Helsinki time.
 
 The max prices for today:
 
 	program [h]                    start time                      end time mean price [€c/kWh]
-	          1 2023-08-03 18:00:00 EEST+0300 2023-08-03 19:00:00 EEST+0300               3.951
-	          2 2023-08-03 18:00:00 EEST+0300 2023-08-03 20:00:00 EEST+0300               3.931
-	          3 2023-08-03 18:00:00 EEST+0300 2023-08-03 21:00:00 EEST+0300            3.920667
-	          4 2023-08-03 18:00:00 EEST+0300 2023-08-03 22:00:00 EEST+0300             3.87575
+	          1 2023-08-04 11:00:00 EEST+0300 2023-08-04 12:00:00 EEST+0300               3.125
+	          2 2023-08-04 10:00:00 EEST+0300 2023-08-04 12:00:00 EEST+0300                 3.1
+	          3 2023-08-04 10:00:00 EEST+0300 2023-08-04 13:00:00 EEST+0300            3.091333
+	          4 2023-08-04 10:00:00 EEST+0300 2023-08-04 14:00:00 EEST+0300             3.07325
 
 The min prices for today:
 
 	program [h]                    start time                      end time mean price [€c/kWh]
-	          1 2023-08-03 15:00:00 EEST+0300 2023-08-03 16:00:00 EEST+0300                2.23
-	          2 2023-08-03 15:00:00 EEST+0300 2023-08-03 17:00:00 EEST+0300               2.247
-	          3 2023-08-03 14:00:00 EEST+0300 2023-08-03 17:00:00 EEST+0300            2.397667
-	          4 2023-08-03 14:00:00 EEST+0300 2023-08-03 18:00:00 EEST+0300              2.6025
+	          1 2023-08-05 00:00:00 EEST+0300 2023-08-05 01:00:00 EEST+0300                2.11
+	          2 2023-08-04 23:00:00 EEST+0300 2023-08-05 01:00:00 EEST+0300               2.177
+	          3 2023-08-04 22:00:00 EEST+0300 2023-08-05 01:00:00 EEST+0300               2.316
+	          4 2023-08-04 21:00:00 EEST+0300 2023-08-05 01:00:00 EEST+0300             2.45875
 
 
 Source code available at [github.com/nakytoe/washtimer](https://github.com/nakytoe/washtimer).
