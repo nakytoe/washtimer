@@ -22,7 +22,7 @@ The min prices for today:
 	          1 2023-09-09 00:00:00 EEST+0300 2023-09-09 01:00:00 EEST+0300               1.207
 	          2 2023-09-08 23:00:00 EEST+0300 2023-09-09 01:00:00 EEST+0300              1.3325
 	          3 2023-09-08 22:00:00 EEST+0300 2023-09-09 01:00:00 EEST+0300            1.944333
-	          4 2023-09-07 23:00:00 EEST+0300 2023-09-08 03:00:00 EEST+0300             2.15725
+	          4 2023-09-08 21:00:00 EEST+0300 2023-09-09 01:00:00 EEST+0300               7.463
 
 
 Source code available at [github.com/nakytoe/washtimer](https://github.com/nakytoe/washtimer).
