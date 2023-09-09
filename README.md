@@ -11,10 +11,10 @@ A GitHub Actions workflow updates the prices shown daily around 06:30 and 15:15 
 The max prices for today:
 
 	program [h]                    start time                      end time mean price [€c/kWh]
-	          1 2023-09-08 20:00:00 EEST+0300 2023-09-08 21:00:00 EEST+0300               27.73
-	          2 2023-09-08 20:00:00 EEST+0300 2023-09-08 22:00:00 EEST+0300             25.8745
-	          3 2023-09-08 19:00:00 EEST+0300 2023-09-08 22:00:00 EEST+0300              24.269
-	          4 2023-09-08 18:00:00 EEST+0300 2023-09-08 22:00:00 EEST+0300            21.54675
+	          1 2023-09-09 11:00:00 EEST+0300 2023-09-09 12:00:00 EEST+0300               2.065
+	          2 2023-09-09 11:00:00 EEST+0300 2023-09-09 13:00:00 EEST+0300                2.04
+	          3 2023-09-09 10:00:00 EEST+0300 2023-09-09 13:00:00 EEST+0300            1.991667
+	          4 2023-09-09 10:00:00 EEST+0300 2023-09-09 14:00:00 EEST+0300             1.96025
 
 The min prices for today:
 
@@ -22,7 +22,7 @@ The min prices for today:
 	          1 2023-09-10 00:00:00 EEST+0300 2023-09-10 01:00:00 EEST+0300              -0.108
 	          2 2023-09-09 23:00:00 EEST+0300 2023-09-10 01:00:00 EEST+0300             -0.0545
 	          3 2023-09-09 22:00:00 EEST+0300 2023-09-10 01:00:00 EEST+0300              -0.036
-	          4 2023-09-09 04:00:00 EEST+0300 2023-09-09 08:00:00 EEST+0300             0.00025
+	          4 2023-09-09 21:00:00 EEST+0300 2023-09-10 01:00:00 EEST+0300               0.009
 
 
 Source code available at [github.com/nakytoe/washtimer](https://github.com/nakytoe/washtimer).
