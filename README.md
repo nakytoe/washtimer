@@ -20,9 +20,9 @@ The min prices for today:
 
 	program [h]                    start time                      end time mean price [€c/kWh]
 	          1 2023-10-25 00:00:00 EEST+0300 2023-10-25 01:00:00 EEST+0300               2.649
-	          2 2023-10-24 03:00:00 EEST+0300 2023-10-24 05:00:00 EEST+0300               3.078
-	          3 2023-10-24 02:00:00 EEST+0300 2023-10-24 05:00:00 EEST+0300               3.095
-	          4 2023-10-24 00:00:00 EEST+0300 2023-10-24 04:00:00 EEST+0300               3.092
+	          2 2023-10-24 23:00:00 EEST+0300 2023-10-25 01:00:00 EEST+0300               3.804
+	          3 2023-10-24 22:00:00 EEST+0300 2023-10-25 01:00:00 EEST+0300            4.189333
+	          4 2023-10-24 21:00:00 EEST+0300 2023-10-25 01:00:00 EEST+0300             4.45425
 
 
 Source code available at [github.com/nakytoe/washtimer](https://github.com/nakytoe/washtimer).
