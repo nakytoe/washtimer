@@ -21,8 +21,8 @@ The min prices for today:
 	program [h]                   start time                     end time mean price [€c/kWh]
 	          1 2024-01-09 00:00:00 EET+0200 2024-01-09 01:00:00 EET+0200               6.199
 	          2 2024-01-08 23:00:00 EET+0200 2024-01-09 01:00:00 EET+0200              8.1525
-	          3 2024-01-08 00:00:00 EET+0200 2024-01-08 03:00:00 EET+0200            9.258333
-	          4 2024-01-08 00:00:00 EET+0200 2024-01-08 04:00:00 EET+0200             9.48025
+	          3 2024-01-08 22:00:00 EET+0200 2024-01-09 01:00:00 EET+0200               9.562
+	          4 2024-01-08 21:00:00 EET+0200 2024-01-09 01:00:00 EET+0200              10.712
 
 
 Source code available at [github.com/nakytoe/washtimer](https://github.com/nakytoe/washtimer).
