@@ -22,7 +22,7 @@ The min prices for today:
 	          1 2024-05-23 00:00:00 EEST+0300 2024-05-23 01:00:00 EEST+0300                0.02
 	          2 2024-05-22 23:00:00 EEST+0300 2024-05-23 01:00:00 EEST+0300               0.165
 	          3 2024-05-22 22:00:00 EEST+0300 2024-05-23 01:00:00 EEST+0300            0.280333
-	          4 2024-05-22 02:00:00 EEST+0300 2024-05-22 06:00:00 EEST+0300               0.333
+	          4 2024-05-22 21:00:00 EEST+0300 2024-05-23 01:00:00 EEST+0300             0.36475
 
 
 Source code available at [github.com/nakytoe/washtimer](https://github.com/nakytoe/washtimer).
