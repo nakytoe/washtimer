@@ -19,10 +19,10 @@ The max prices for today:
 The min prices for today:
 
 	program [h]                    start time                      end time mean price [€c/kWh]
-	          1 2024-07-19 04:00:00 EEST+0300 2024-07-19 05:00:00 EEST+0300                0.62
-	          2 2024-07-19 04:00:00 EEST+0300 2024-07-19 06:00:00 EEST+0300               0.622
-	          3 2024-07-19 03:00:00 EEST+0300 2024-07-19 06:00:00 EEST+0300               0.787
-	          4 2024-07-19 02:00:00 EEST+0300 2024-07-19 06:00:00 EEST+0300              0.8955
+	          1 2024-07-20 00:00:00 EEST+0300 2024-07-20 01:00:00 EEST+0300               2.081
+	          2 2024-07-19 23:00:00 EEST+0300 2024-07-20 01:00:00 EEST+0300               2.222
+	          3 2024-07-19 22:00:00 EEST+0300 2024-07-20 01:00:00 EEST+0300            2.319667
+	          4 2024-07-19 21:00:00 EEST+0300 2024-07-20 01:00:00 EEST+0300               2.399
 
 
 Source code available at [github.com/nakytoe/washtimer](https://github.com/nakytoe/washtimer).
